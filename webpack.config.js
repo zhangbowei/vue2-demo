@@ -81,5 +81,7 @@ module.exports = {
                 browsers: ['last 100 versions']
             })
         ]
-    }
+    },
+    // 开启source-map，webpack有多种source-map，在官网文档可以查到
+    devtool: '#eval-source-map'
 }
