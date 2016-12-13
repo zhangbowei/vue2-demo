@@ -34,7 +34,8 @@ module.exports = {
         publicPath: config.publicPath,
         stats: {
             colors: true //显示不同的颜色区分打包的文件
-        }
+        },
+        hot: true
     },
     entry: ['./src/main.js'], //编译入口文件
     output: {
@@ -91,5 +92,6 @@ module.exports = {
         ]
     },
     // 开启source-map，webpack有多种source-map，在官网文档可以查到
-    devtool: 'cheap-module-eval-source-map'
+    // devtool: 'cheap-module-eval-source-map'
+    devtool: 'source-map'
 }
