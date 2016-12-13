@@ -25,9 +25,16 @@ plugins.push(
         template: './src/template/index.html', //html模板路径
     })
 )
+plugins.push(new webpack.HotModuleReplacementPlugin());
 
 
 module.exports = {
+    devServer: {
+        publicPath: config.publicPath,
+        stats: {
+            colors: true //显示不同的颜色区分打包的文件
+        }
+    },
     entry: ['./src/main.js'], //编译入口文件
     output: {
         publicPath: config.publicPath, //服务器的路径

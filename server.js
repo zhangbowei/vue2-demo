@@ -1,15 +1,14 @@
 const Webpack = require("webpack")
 const WebpackDevServer = require('webpack-dev-server')
-const webpackConfig = require("./webpack.config")
 const config = require('./config/')
+const webpackConfig = require("./webpack.config")
+
+// webpackConfig.entry.unshift("webpack-dev-server/client?http://localhost:3000/", "webpack/hot/dev-server");
+webpackConfig.entry.unshift("webpack-dev-server/client?http://localhost:3000/");
 
 var compiler = Webpack(webpackConfig)
-var server = new WebpackDevServer(compiler, {
-    publicPath: config.publicPath,
-    stats: {
-        colors: true //显示不同的颜色区分打包的文件
-    }
-})
+
+var server = new WebpackDevServer(compiler, webpackConfig.devServer);
 
 server.listen(3000, (err) => {
     if (err) {
