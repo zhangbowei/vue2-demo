@@ -33,7 +33,8 @@ module.exports = {
         publicPath: config.publicPath,
         stats: {
             colors: true //显示不同的颜色区分打包的文件
-        }
+        },
+        hot: true
     },
     entry: ['./src/main.js'], //编译入口文件
     output: {
