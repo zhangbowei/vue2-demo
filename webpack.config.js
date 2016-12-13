@@ -7,6 +7,7 @@ const IS_ENV = process.env.NODE_ENV == 'production'
 
 var plugins = []
 if (IS_ENV) { //生产环境
+    module.exports.devtool = 'source-map';
     plugins.push(new webpack.DefinePlugin({
         'process.env': { //设置成生产环境
             NODE_ENV: 'production'
@@ -33,8 +34,7 @@ module.exports = {
         publicPath: config.publicPath,
         stats: {
             colors: true //显示不同的颜色区分打包的文件
-        },
-        hot: true
+        }
     },
     entry: ['./src/main.js'], //编译入口文件
     output: {
@@ -91,5 +91,5 @@ module.exports = {
         ]
     },
     // 开启source-map，webpack有多种source-map，在官网文档可以查到
-    devtool: '#eval-source-map'
+    devtool: 'cheap-module-eval-source-map'
 }

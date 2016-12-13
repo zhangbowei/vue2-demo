@@ -3,8 +3,8 @@ const WebpackDevServer = require('webpack-dev-server')
 const config = require('./config/')
 const webpackConfig = require("./webpack.config")
 
-webpackConfig.entry.unshift("webpack-dev-server/client?http://localhost:3000/", "webpack/hot/dev-server");
-// webpackConfig.entry.unshift("webpack-dev-server/client?http://localhost:3000/");
+// webpackConfig.entry.unshift("webpack-dev-server/client?http://localhost:3000/", "webpack/hot/dev-server");
+webpackConfig.entry.unshift("webpack-dev-server/client?http://localhost:3000/");
 
 var compiler = Webpack(webpackConfig)
 
